@@ -17,8 +17,23 @@ body {
     border-radius: 20px;
     border: 3px solid #ff6b81;
     box-shadow: 0 8px 20px rgba(255, 107, 129, 0.3);
-    max-width: 400px;
+    max-width: 90%;
     width: 90%;
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 20px;
+        width: 95%;
+    }
+
+    .header_text {
+        font-size: 36px;
+    }
+
+    .gif_container img {
+        width: 80%;
+    }
 }
 
 .header_text {
@@ -73,11 +88,25 @@ body {
 }
 
 @keyframes wiggle {
-    0% { transform: rotate(0deg); }
-    25% { transform: rotate(-5deg); }
-    50% { transform: rotate(5deg); }
-    75% { transform: rotate(-5deg); }
-    100% { transform: rotate(0deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(-5deg);
+    }
+
+    50% {
+        transform: rotate(5deg);
+    }
+
+    75% {
+        transform: rotate(-5deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
 }
 
 .wiggle {
@@ -85,8 +114,15 @@ body {
 }
 
 @keyframes heartFade {
-    0% { opacity: 1; transform: scale(1); }
-    100% { opacity: 0; transform: scale(1.5); }
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(1.5);
+    }
 }
 
 .heart {
