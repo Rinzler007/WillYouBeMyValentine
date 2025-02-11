@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap"
+      rel="stylesheet"
+    />
+    <title>Do You Wanna Go Out With Me?</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="header_text">Himanshi</h1>
+      <h1 class="header_text">Will you be my Valentine ?</h1>
+      <div class="gif_container">
+        <img
+          src="https://media.tenor.com/efbi1EpFlVUAAAAi/bugcat-capoo.gif"
+          alt="Cute Capoo GIF"
+        />
+      </div>
+      <div class="buttons">
+        <button class="btn" id="yesButton" onclick="nextPage()">Yes</button>
+        <button class="btn" id="noButton">No</button>
+      </div>
+      <h3>Made with &#x2665;&#xfe0f; by Harsh</h3>
+    </div>
+
+    <script>
+      var debounce = function (fn, t = 1000) {
+        let timer;
+        return function (...args) {
+          clearTimeout(timer);
+          timer = setTimeout(() => fn(...args), t);
+        };
+      };
+
+      function nextPage() {
+        window.location.href = "yes.html";
+      }
+
+      function moveButton() {
+        var button = document.getElementById("noButton");
+        var maxX = window.innerWidth - button.offsetWidth;
+        var maxY = window.innerHeight - button.offsetHeight;
+
+        var x = Math.random() * maxX;
+        var y = Math.random() * maxY;
+
+        button.style.position = "absolute";
+        button.style.left = `${x}px`;
+        button.style.top = `${y}px`;
+      }
+      document
+        .getElementById("noButton")
+        .addEventListener("mouseover", moveButton);
+      document.getElementById("noButton").addEventListener("click", moveButton);
+    </script>
+  </body>
+</html>
